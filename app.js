@@ -114,6 +114,9 @@ function saveProduct() {
     const servingValue =
         document.getElementById('serving-size')?.value || "";
 
+    const capacityLabel =
+        getButtonLabel('capacity-group', capacityValue) || capacityValue;
+
     const product = {
         date: now.toLocaleString("ja-JP"),
 
@@ -125,11 +128,11 @@ function saveProduct() {
         shippingCost:
             document.getElementById('shipping-cost').value,
 
-        capacity: capacityValue,
+        capacity: capacityLabel,
 
         servingSize: servingValue === "bottle"
             ? "1本売り"
-            : servingValue + "L",
+            : servingValue*1000 + "ml",
 
         costPerServing:
             document.getElementById('cost-per-serving').innerText,
@@ -155,6 +158,21 @@ function saveProduct() {
     );
 
     displayProducts();
+}
+
+function getButtonLabel(groupId, value) {
+
+    const group = document.getElementById(groupId);
+    if (!group) return "";
+
+    const button = group.querySelector(`button[data-value="${value}"]`);
+    if (!button) return "";
+
+    return button.innerHTML
+        .replace(/<br\s*\/?>/gi, " ")
+        .replace(/<[^>]+>/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
 }
 
 function deleteProduct(index) {
