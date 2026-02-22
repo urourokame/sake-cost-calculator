@@ -1,0 +1,171 @@
+body {
+    font-family: "Segoe UI", "Hiragino Sans", sans-serif;
+    background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4f46e5;
+}
+
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #6366f1;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+input[type="range"] {
+    accent-color: #6366f1;
+    margin-top: 8px;
+}
+
+.result-box {
+    background: #f1f5ff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.result-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+.small-text {
+    font-size: 14px;
+    color: #666;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #6366f1;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #4f46e5;
+    transform: translateY(-2px);
+}
+
+#product-list li {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    font-size: 14px;
+}
+
+#product-list button {
+    margin-top: 8px;
+    background: #ef4444;
+}
+
+#product-list button:hover {
+    background: #dc2626;
+}
+
+.slider-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.slider-label {
+    width: 60px;
+    font-weight: bold;
+}
+
+.slider-row input[type="range"] {
+    flex: 1;
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-info {
+    font-size: 14px;
+}
+
+.delete-btn {
+    width: auto;
+    padding: 4px 8px;
+    font-size: 12px;
+    background: #ef4444;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.button-group button {
+    padding: 8px 6px;
+    border: 1px solid #ccc;
+    background: rgb(111, 168, 255);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: normal;
+}
+
+.button-group button.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}

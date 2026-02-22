@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お酒の原価計算</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>お酒の原価計算</h1>
+
+        <div id="cost-calculator">
+            <label>購入価格 (税込)</label>
+            <input type="number" id="purchase-price" required><br>
+            
+            <label>送料</label>
+            <input type="number" id="shipping-cost" value="0"><br>
+            
+            <label>商品名 (任意)</label>
+            <input type="text" id="product-name"><br>
+            
+            <label>容量</label>
+            <div class="button-group" id="capacity-group">
+                <button type="button" data-value="0.35">350ml（缶）</button>
+                <button type="button" data-value="0.5">500ml（缶）</button>
+                <button type="button" data-value="0.72">720ml（4合瓶）</button>
+                <button type="button" data-value="0.9">900ml</button>
+                <button type="button" data-value="1">1L</button>
+                <button type="button" data-value="1.8">1.8L(一升びん)</button>
+                <button type="button" data-value="4">4L（業務用）</button>
+            </div>
+
+            <label>1人前</label>
+            <div class="button-group" id="serving-group">
+                <button type="button" data-value="0.1">100ml</button>
+                <button type="button" data-value="0.18">180ml</button>
+                <button type="button" data-value="bottle">1本売り</button>
+            </div>            
+        </div>
+
+        <div id="results" class="hidden">
+            <h2>結果</h2>
+
+            <p>1人前の原価: ¥<span id="cost-per-serving">0</span></p>
+
+            <div>
+                <label>原価率</label>
+
+                <div class="slider-row">
+                    <label class="slider-label">10の位</label>
+                    <input type="range" min="0" max="9" step="1" value="3"
+                        id="cost-rate-tens" oninput="calculatePrices()">
+                    <span id="tens-value">3</span>
+                </div>
+                <div class="slider-row">
+                    <label class="slider-label">1の位</label>
+                    <input type="range" min="0" max="9" step="1" value="0"
+                        id="cost-rate-ones" oninput="calculatePrices()">
+                    <span id="ones-value">0</span>
+                </div>
+                <p>原価率: <span id="final-cost-rate">30</span>%</p>
+                <p>粗利益率: <span id="gross-margin-display">70</span>% / 粗利益：￥<span id="gross-margin-price">0</span></p>
+
+            </div>
+            
+            <div class="card result-box">
+                <div class="card result-box">
+                    <div class="small-text">販売価格</div>
+                    <div class="result-number">￥<span id="selling-price">0</span></div>
+                </div>
+
+            <button type="button" onclick="saveProduct()">保存</button>
+        </div>     
+
+        <div>
+            <h2>保存した商品一覧</h2>
+            <ul id="product-list"></ul>
+        </div>
+    </div>
+
+    <!-- これが超重要 -->
+    <script src="app.js"></script>
+</body>
+</html>
