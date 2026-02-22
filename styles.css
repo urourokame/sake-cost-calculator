@@ -150,12 +150,12 @@ button:hover {
 .button-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    gap: 4px;
+    gap: 5px;
     margin-bottom: 10px;
 }
 
 .button-group button {
-    padding: 5px 5px;
+    padding: 5px;
     border: 1px solid #ccc;
     background: rgb(111, 168, 255);
     border-radius: 6px;
