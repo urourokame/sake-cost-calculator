@@ -180,7 +180,7 @@ function displayProducts() {
                 <div class="product-info">
                     <strong>${product.name} / ${product.capacity} / ${product.servingSize}</strong><br>
                     ${product.date}<br>
-                    仕入:${product.purchasePrice}円 + 送料:${product.shippingCost}円 / 
+                    仕入:${product.purchasePrice}円 + 送料:${product.shippingCost}円<br>
                     原価率:${product.costRate}% / 粗利益:${product.grossMarginPrice}円<br>
                     <strong>販売価格: ￥${product.sellingPrice}</strong>
                 </div>
